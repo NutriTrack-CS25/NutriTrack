@@ -1,3 +1,14 @@
+# Logs & Environment Variables
+*.log
+.env
+.env.local
+
+# Editor & OS files
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+
 # Frontend
 frontend/node_modules/
 frontend/.env

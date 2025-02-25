@@ -1,12 +1,12 @@
-## Contributing to NutriTrack
+# Contributing to NutriTrack
 
-### Branching Strategy
+## Branching Strategy
 
 - `main` → Stable production code
 - `dev` → Active development branch
 - `feature-xxx` → New features (e.g., `feature-auth`, `feature-api`)
 
-### 🔄 Contribution Workflow
+## 🔄 Contribution Workflow
 
 1. **Fork the repository**
 2. **Clone your fork**: `git clone https://github.com/yourusername/NutriTrack.git`
@@ -21,14 +21,14 @@
 5. **Push to GitHub**: `git push origin feature-xxx`
 6. **Create a Pull Request** to `dev` branch and request a review
 
-### ✅ Code Guidelines
+## ✅ Code Guidelines
 
 - Follow best practices for **React & Express.js**
 - Keep commits **small and meaningful**
 - Write **clear commit messages**
 - Run `npm run lint` before submitting PRs
 
-### 🛡️ Security & Best Practices
+## 🛡️ Security & Best Practices
 
 - **Use environment variables** (`.env`) for API keys & secrets
 - **Validate user input** to prevent SQL injection

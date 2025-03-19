@@ -7,6 +7,7 @@ import {
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../components/Button";
+import { Link } from "react-router-dom";
 
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
@@ -63,16 +64,16 @@ const SignUpPage = () => {
             value={formData.confirmPassword}
             onChange={handleChange}
           />
-          <Button
-            className="w-full"
-            text="Sign Up"
-            onClick={() => console.log("Sign Up Clicked")}
-          />
+          <Link to="/login">
+            <Button className="w-full" text="Sign Up" />
+          </Link>
           <p className="text-center text-gray-600">
             Already have an account?{" "}
-            <span className="text-emerald-500 cursor-pointer hover:underline">
-              Sign in
-            </span>
+            <Link to="/login">
+              <span className="text-emerald-500 cursor-pointer hover:underline">
+                Log in
+              </span>
+            </Link>
           </p>
         </form>
       </div>

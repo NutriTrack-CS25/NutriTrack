@@ -1,12 +1,14 @@
-import "./App.css";
-import HomePage from "./pages/Home/HomePage";
+// import "./App.css";
+// import LogInPage from "./pages/LogInPage";
+// import SignUpPage from "./pages/SignUp/SignUpPage";
 
-function App() {
-  return (
-    <>
-      <HomePage />
-    </>
-  );
-}
+// function App() {
+//   return (
+//     <>
+//       <SignUpPage />
+//       <LogInPage />
+//     </>
+//   );
+// }
 
-export default App;
+// export default App;

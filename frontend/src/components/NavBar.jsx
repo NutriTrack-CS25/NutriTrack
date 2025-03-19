@@ -1,5 +1,6 @@
 import Button from "./Button";
 import NavList from "./NavList";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -19,21 +20,21 @@ const Navbar = () => {
           <NavList text={"Home"} />
           <NavList text={"Features"} />
           <NavList text={"Testimonials"} />
-          <li>
+          <Link to="/signup">
             <Button
               className="w-full"
               text="Sign Up"
               onClick={() => console.log("Sign Up Clicked")}
             />
-          </li>
-          <li>
+          </Link>
+          <Link to="/login">
             <Button
               className="w-full"
               variant="secondary"
               text="Log In"
               onClick={() => console.log("Log In Clicked")}
             />
-          </li>
+          </Link>
         </ul>
       </nav>
     </header>

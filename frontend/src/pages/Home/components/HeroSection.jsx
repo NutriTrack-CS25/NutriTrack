@@ -46,7 +46,7 @@ const HeroSection = () => {
                   key={i}
                   src={`/assets/home/customers/customer-${i + 1}.jpg`}
                   alt="Customer"
-                  className="h-12 w-12 rounded-full border-2 border-[#F5F5F5] shadow-md"
+                  className="h-12 w-12 rounded-full border-2 border-[#F5F5F5]"
                 />
               ))}
             </div>

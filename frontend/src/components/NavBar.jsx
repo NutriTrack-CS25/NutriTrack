@@ -16,7 +16,7 @@ const Navbar = () => {
       {/* Navigation */}
       <nav>
         <ul className="flex items-center gap-8 text-lg font-medium">
-          <NavList text={"How it works"} />
+          <NavList text={"Home"} />
           <NavList text={"Features"} />
           <NavList text={"Testimonials"} />
           <li>

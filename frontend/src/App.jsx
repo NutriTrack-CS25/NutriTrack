@@ -1,15 +1,14 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import SignUpPage from "./pages/SignUpPage";
+import LogInPage from "./pages/LogInPage";
+import SignUpPage from "./pages/SignUp/SignUpPage";
+import SignUpPage1 from "./pages/SignUp/SignUpPage1";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <SignUpPage />
+      <SignUpPage1 />
+      <LogInPage />
     </>
   );
 }

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import FormInput from "../components/FormInput";
+import FormInput from "../../components/FormInput";
 import {
   faUser,
   faEnvelope,
-  faLock,
   faEye,
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
+import Button from "../../components/Button";
 
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +25,7 @@ const SignUpPage = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-green-50">
       <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg">
-        <h2 className="text-2xl font-bold text-center text-emerald-500 mb-6">
+        <h2 className="text-2xl font-bold text-center text-teal-700 mb-6">
           Create your account
         </h2>
         <form className="space-y-4">
@@ -63,9 +63,11 @@ const SignUpPage = () => {
             value={formData.confirmPassword}
             onChange={handleChange}
           />
-          <button className="w-full bg-emerald-500 text-white font-semibold py-2 rounded-xl hover:bg-emerald-600 transition">
-            Sign Up
-          </button>
+          <Button
+            className="w-full"
+            text="Sign Up"
+            onClick={() => console.log("Sign Up Clicked")}
+          />
           <p className="text-center text-gray-600">
             Already have an account?{" "}
             <span className="text-emerald-500 cursor-pointer hover:underline">

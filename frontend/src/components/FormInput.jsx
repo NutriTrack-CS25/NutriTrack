@@ -12,15 +12,15 @@ const FormInput = ({
   onChange,
 }) => {
   return (
-    <div className="border-2 border-gray-300 rounded-lg flex justify-between px-4 py-2 mb-4 items-center hover:border-green-500">
+    <div className="border-2 border-gray-300 rounded-lg flex justify-between px-4 py-2 mb-6 items-center  hover:shadow-[0_0_4px_#22c55e] focus-within:shadow-[0_0_4px_#22c55e]  transition-shadow">
       <input
         type={type}
-        name={name} // Ensure name is passed for controlled component updates
+        name={name}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
         required
-        className="flex-grow outline-none"
+        className="flex-grow outline-none placeholder-gray-400 focus:placeholder-transparent"
       />
       {!toggleIcon && iconFa && (
         <FontAwesomeIcon icon={iconFa} className="text-gray-500" />

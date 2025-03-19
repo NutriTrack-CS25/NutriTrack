@@ -8,6 +8,7 @@ import {
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 const LogInPage = () => {
   const [formData, setFormData] = useState({
@@ -54,16 +55,16 @@ const LogInPage = () => {
               onChange={handleChange}
             />
           </div>
-          <Button
-            className="w-full"
-            text="Log In"
-            onClick={() => console.log("Sign Up Clicked")}
-          />
+          <Link to="/">
+            <Button className="w-full" text="Log In" />
+          </Link>
           <p className="text-center text-gray-600">
             Create new account?{" "}
-            <span className="text-emerald-500 cursor-pointer hover:underline">
-              Register
-            </span>
+            <Link to="/signup">
+              <span className="text-emerald-500 cursor-pointer hover:underline">
+                Register
+              </span>
+            </Link>
           </p>
         </form>
       </div>

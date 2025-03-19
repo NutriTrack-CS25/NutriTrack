@@ -13,6 +13,7 @@ const HeroSection = () => {
             className="w-full max-w-lg"
           />
         </div>
+
         {/* Text Content */}
         <div>
           <h1 className="text-4xl font-bold text-[#333333] leading-tight">
@@ -36,8 +37,10 @@ const HeroSection = () => {
               onClick={() => console.log("Learn More Clicked")}
             />
           </div>
-          <div className="mt-10 flex items-center gap-4">
-            <div className="flex -space-x-4">
+
+          {/* Customers Section */}
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <div className="flex -space-x-4 overflow-hidden">
               {[...Array(6)].map((_, i) => (
                 <img
                   key={i}

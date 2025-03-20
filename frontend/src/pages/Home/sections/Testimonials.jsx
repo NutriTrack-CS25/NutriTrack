@@ -35,9 +35,10 @@ const testimonials = [
 ];
 
 const slideSettings = {
+  transitionDuration: 750,
   infinite: true,
-  arrows: true, // Hide arrows for a cleaner look
-  indicators: true, // Show navigation dots
+  arrows: true,
+  indicators: true,
 };
 
 const Testimonials = () => {

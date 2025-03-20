@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import NavList from "./NavList";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ sectionRefs }) => {
@@ -17,6 +18,7 @@ const Navbar = ({ sectionRefs }) => {
           e.preventDefault();
           scrollToSection(sectionRefs.hero);
         }}
+        aria-label="Go to Home"
       >
         <img
           className="rounded-full w-20 h-20"
@@ -28,45 +30,29 @@ const Navbar = ({ sectionRefs }) => {
       {/* Navigation */}
       <nav>
         <ul className="flex items-center gap-8 text-lg font-medium">
+          <NavList
+            text="Home"
+            onClick={() => scrollToSection(sectionRefs.hero)}
+          />
+          <NavList
+            text="Features"
+            onClick={() => scrollToSection(sectionRefs.features)}
+          />
+          <NavList
+            text="Testimonials"
+            onClick={() => scrollToSection(sectionRefs.testimonials)}
+          />
+
           <li>
-            <a
-              href="#hero"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(sectionRefs.hero);
-              }}
-            >
-              Home
-            </a>
+            <Link to="/signup">
+              <Button className="w-full" text="Sign Up" />
+            </Link>
           </li>
           <li>
-            <a
-              href="#features"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(sectionRefs.features);
-              }}
-            >
-              Features
-            </a>
+            <Link to="/login">
+              <Button className="w-full" variant="secondary" text="Log In" />
+            </Link>
           </li>
-          <li>
-            <a
-              href="#testimonials"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(sectionRefs.testimonials);
-              }}
-            >
-              Testimonials
-            </a>
-          </li>
-          <Link to="/signup">
-            <Button className="w-full" text="Sign Up" />
-          </Link>
-          <Link to="/login">
-            <Button className="w-full" variant="secondary" text="Log In" />
-          </Link>
         </ul>
       </nav>
     </header>

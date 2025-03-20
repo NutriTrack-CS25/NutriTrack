@@ -35,7 +35,8 @@ const testimonials = [
 ];
 
 const slideSettings = {
-  transitionDuration: 750,
+  transitionDuration: 500,
+  easing: "linear",
   infinite: true,
   arrows: true,
   indicators: true,

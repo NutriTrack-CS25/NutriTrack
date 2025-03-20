@@ -11,19 +11,21 @@ const HomePage = () => {
   const heroRef = useRef(null);
   const featuresRef = useRef(null);
   const testimonialsRef = useRef(null);
+  const ctaRef = useRef(null);
 
   // Create an object with all refs to pass to the navbar
   const sectionRefs = {
     hero: heroRef,
     features: featuresRef,
     testimonials: testimonialsRef,
+    cta: ctaRef,
   };
 
   return (
     <>
       <Navbar sectionRefs={sectionRefs} />
       <div ref={heroRef} id="hero" className="scroll-mt-[96px]">
-        <HeroSection featuresRef={featuresRef} />
+        <HeroSection sectionRefs={sectionRefs} />
       </div>
       <div ref={featuresRef} id="features" className="scroll-mt-[96px]">
         <Features />
@@ -31,7 +33,9 @@ const HomePage = () => {
       <div ref={testimonialsRef} id="testimonials" className="scroll-mt-[96px]">
         <Testimonials />
       </div>
-      <CTASection />
+      <div ref={ctaRef} id="cta" className="scroll-mt-[96px]">
+        <CTASection />
+      </div>
       <Footer />
     </>
   );

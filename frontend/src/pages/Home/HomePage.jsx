@@ -22,13 +22,13 @@ const HomePage = () => {
   return (
     <>
       <Navbar sectionRefs={sectionRefs} />
-      <div ref={heroRef} id="hero">
+      <div ref={heroRef} id="hero" className="scroll-mt-[96px]">
         <HeroSection featuresRef={featuresRef} />
       </div>
-      <div ref={featuresRef} id="features">
+      <div ref={featuresRef} id="features" className="scroll-mt-[96px]">
         <Features />
       </div>
-      <div ref={testimonialsRef} id="testimonials">
+      <div ref={testimonialsRef} id="testimonials" className="scroll-mt-[96px]">
         <Testimonials />
       </div>
       <CTASection />

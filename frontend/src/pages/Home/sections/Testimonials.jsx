@@ -4,7 +4,7 @@ import Card from "../../../components/Card";
 const Testimonials = () => {
   return (
     <>
-      <section className="bg-[#FFFFEA] py-20 pt-25">
+      <section className="bg-[#FFFFEA] py-20">
         <h2 className="text-4xl font-bold text-center">Our Testimonials</h2>
         <p className="text-lg text-center mt-4">
           Our users speak for themselves – see how{" "}

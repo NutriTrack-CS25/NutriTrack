@@ -1,10 +1,10 @@
 import React from "react";
 import Button from "../../../components/Button";
 
-const HeroSection = ({ featuresRef }) => {
+const HeroSection = ({ sectionRefs }) => {
   // Function to scroll to features section
-  const scrollToFeatures = () => {
-    featuresRef.current?.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (ref) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -33,13 +33,19 @@ const HeroSection = ({ featuresRef }) => {
             <Button
               className=""
               text="Get Started"
-              onClick={() => console.log("Get Started Clicked")}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(sectionRefs.cta);
+              }}
             />
             <Button
               className=""
               variant="secondary"
               text="Learn more ↓"
-              onClick={scrollToFeatures}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(sectionRefs.features);
+              }}
             />
           </div>
 

@@ -1,14 +1,14 @@
 import React from "react";
 
-const NavList = ({ text }) => {
+const NavList = ({ text, onClick }) => {
   return (
     <li>
-      <a
-        href="#"
-        className="text-gray-800 transition-all duration-300 hover:text-[#0FA87D]"
+      <button
+        className="text-gray-800 transition-all duration-300 hover:text-[#0FA87D] focus:outline-none cursor-pointer"
+        onClick={onClick}
       >
         {text}
-      </a>
+      </button>
     </li>
   );
 };

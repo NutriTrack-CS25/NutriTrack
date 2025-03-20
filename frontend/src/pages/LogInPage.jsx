@@ -8,56 +8,73 @@ import {
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const LogInPage = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+  const navigate = useNavigate();
+
+  const loginSchema = z.object({
+    email: z.string().email("Invalid email address"),
+    password: z
+      .string()
+      .min(6, "The password must contain at least 6 characters"),
   });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: zodResolver(loginSchema) });
+
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const onSubmit = (data) => {
+    navigate("/");
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-green-50">
+    <div className="flex justify-around items-center min-h-screen bg-green-50">
       <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg">
         <h2 className="text-2xl font-bold text-center text-teal-700 mb-6">
           Log in to your account
         </h2>
-        <form className="space-y-4">
+        <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
           <div>
             <label htmlFor="email" className="font-bold">
               Email Address
             </label>
             <FormInput
-              type="email"
+              {...register("email")}
               name="email"
               placeholder="Email"
               iconFa={faEnvelope}
-              value={formData.email}
-              onChange={handleChange}
+              autoComplete="email"
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email.message}</p>
+            )}
           </div>
           <div>
             <label htmlFor="password" className="font-bold">
               Password
             </label>
             <FormInput
+              {...register("password")}
               type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Password"
               toggleIcon={showPassword ? faEye : faEyeSlash}
               onToggle={() => setShowPassword(!showPassword)}
-              value={formData.password}
-              onChange={handleChange}
+              autoComplete="current-password"
             />
+            {errors.password && (
+              <p className="text-red-500 text-sm">{errors.password.message}</p>
+            )}
           </div>
-          <Link to="/">
-            <Button className="w-full" text="Log In" />
-          </Link>
+          <Button className="w-full mt-2" text="Log In" type="submit" />
           <p className="text-center text-gray-600">
             Create new account?{" "}
             <Link to="/signup">

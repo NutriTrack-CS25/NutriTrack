@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = ({ imageSrc, altText, testimonial, customerName }) => {
   return (
-    <div className="bg-stone-50 rounded-xl shadow-md outline outline-lime-100 flex flex-col items-center overflow-hidden max-w-md mx-auto">
+    <div className="bg-stone-50 rounded-xl shadow-sm overflow-hidden flex flex-col items-center max-w-md mx-auto">
       <div className="w-full px-6 py-4 bg-green-100">
         <img className="w-16 h-16 rounded-full" src={imageSrc} alt={altText} />
       </div>
@@ -28,8 +28,6 @@ const Card = ({ imageSrc, altText, testimonial, customerName }) => {
           — {customerName}
         </div>
       </div>
-
-      <div className="w-full h-0 border-t border-lime-100"></div>
     </div>
   );
 };

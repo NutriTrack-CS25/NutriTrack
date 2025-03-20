@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CTASection = () => {
   return (
     <section className="py-20">
-      <div className="flex justify-between items-center bg-[#F6FDF7] rounded-xl shadow-[10px_10px_15px_-5px_#E8F5E9] overflow-hidden w-250 mx-auto">
+      <div className="flex justify-between items-center bg-[#F6FDF7] rounded-xl shadow-[15px_15px_25px_5px_rgba(232,245,233,0.90)] overflow-hidden w-250 mx-auto">
         <div className="pl-8 my-16">
           <h2 className="font-bold text-2xl">Join NutriTrack Today!</h2>
           <p className="mt-12">

@@ -48,50 +48,58 @@ const SignUpPage = () => {
         <h2 className="text-2xl font-bold text-center text-teal-700 mb-6">
           Create your account
         </h2>
-        <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
-          <FormInput
-            {...register("username")}
-            type="text"
-            name="username"
-            placeholder="Username"
-            iconFa={faUser}
-            autoComplete="name"
-          />
-          {errors.username && (
-            <p className="text-red-500 text-sm">{errors.username.message}</p>
-          )}
-          <FormInput
-            {...register("email")}
-            name="email"
-            placeholder="Email"
-            iconFa={faEnvelope}
-            autoComplete="email"
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm">{errors.email.message}</p>
-          )}
-          <FormInput
-            {...register("password")}
-            type={showPassword ? "text" : "password"}
-            name="password"
-            placeholder="Password"
-            toggleIcon={showPassword ? faEye : faEyeSlash}
-            onToggle={() => setShowPassword(!showPassword)}
-            autoComplete="new-password"
-          />
-          {errors.password && (
-            <p className="text-red-500 text-sm">{errors.password.message}</p>
-          )}
-          <FormInput
-            {...register("confirmPassword")}
-            type={showConfirmPassword ? "text" : "password"}
-            name="confirmPassword"
-            placeholder="Confirm Password"
-            toggleIcon={showConfirmPassword ? faEye : faEyeSlash}
-            onToggle={() => setShowConfirmPassword(!showConfirmPassword)}
-            autoComplete="off"
-          />
-          {error && <p className="text-red-500 text-sm">{error}</p>}
+        <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
+          <div>
+            <FormInput
+              {...register("username")}
+              type="text"
+              name="username"
+              placeholder="Username"
+              iconFa={faUser}
+              autoComplete="name"
+            />
+            {errors.username && (
+              <p className="text-red-500 text-sm">{errors.username.message}</p>
+            )}
+          </div>
+          <div>
+            <FormInput
+              {...register("email")}
+              name="email"
+              placeholder="Email"
+              iconFa={faEnvelope}
+              autoComplete="email"
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email.message}</p>
+            )}
+          </div>
+          <div>
+            <FormInput
+              {...register("password")}
+              type={showPassword ? "text" : "password"}
+              name="password"
+              placeholder="Password"
+              toggleIcon={showPassword ? faEye : faEyeSlash}
+              onToggle={() => setShowPassword(!showPassword)}
+              autoComplete="new-password"
+            />
+            {errors.password && (
+              <p className="text-red-500 text-sm">{errors.password.message}</p>
+            )}
+          </div>
+          <div>
+            <FormInput
+              {...register("confirmPassword")}
+              type={showConfirmPassword ? "text" : "password"}
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              toggleIcon={showConfirmPassword ? faEye : faEyeSlash}
+              onToggle={() => setShowConfirmPassword(!showConfirmPassword)}
+              autoComplete="off"
+            />
+            {error && <p className="text-red-500 text-sm">{error}</p>}
+          </div>
           <Button className="w-full" text="Sign Up" type="submit" />
           <p className="text-center text-gray-600">
             Already have an account?{" "}

@@ -8,14 +8,14 @@ const testimonials = [
     imageSrc: "https://placehold.co/80x80",
     altText: "Customer 1",
     testimonial:
-      "NutriTrack made it so easy to track my calories and meals. The app is so intuitive, and it’s helped me achieve my fitness goals!",
+      "NutriTrack made it so easy to track my calories and meals. The app is so intuitive, and it's helped me achieve my fitness goals!",
     customerName: "Jennifer Anderson",
   },
   {
     imageSrc: "https://placehold.co/80x80",
     altText: "Customer 2",
     testimonial:
-      "I’ve tried several meal tracking apps, but NutriTrack's personalized approach has really helped me stay on track with my diet!",
+      "I've tried several meal tracking apps, but NutriTrack's personalized approach has really helped me stay on track with my diet!",
     customerName: "Emily Davis",
   },
   {
@@ -34,28 +34,31 @@ const testimonials = [
   },
 ];
 
-const slideSettings = {
-  transitionDuration: 500,
-  easing: "linear",
-  infinite: true,
-  arrows: true,
-  indicators: true,
-};
-
 const Testimonials = () => {
+  // Adjust settings based on screen size
+  const slideSettings = {
+    transitionDuration: 500,
+    easing: "linear",
+    infinite: true,
+    arrows: true,
+    indicators: true,
+  };
+
   return (
-    <section className="bg-[#FFFFEA] py-20">
-      <h2 className="text-4xl font-bold text-center">Our Testimonials</h2>
-      <p className="text-lg text-center mt-4">
+    <section className="bg-[#FFFFEA] py-10 sm:py-16 lg:py-20">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center">
+        Our Testimonials
+      </h2>
+      <p className="text-base sm:text-lg text-center mt-4 px-4">
         Our users speak for themselves – see how{" "}
         <span className="text-teal-500 font-semibold">NutriTrack</span> is
         changing lives.
       </p>
-      <div className="flex justify-center gap-8 mt-12 items-center px-8">
+      <div className="flex justify-center mt-8 sm:mt-12 items-center px-4 sm:px-8">
         <div className="w-full max-w-3xl mx-auto">
           <Slide {...slideSettings}>
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="flex justify-center">
+              <div key={index} className="flex justify-center px-2 sm:px-4">
                 <Card {...testimonial} />
               </div>
             ))}
@@ -67,23 +70,3 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-
-{
-  /* <Slide>
-  {slideImages.map((slideImage, index) => (
-    <div key={index}>
-      <div>
-        <span style={spanStyle}>{slideImage.caption}</span>
-      </div>
-    </div>
-  ))}
-</Slide>; */
-}
-
-{
-  /* <div className="flex justify-around gap-8 mt-12 items-center px-8">
-{testimonialsData.map((testimonial, index) => (
-  <Card key={index} {...testimonial} />
-))}
-</div> */
-}

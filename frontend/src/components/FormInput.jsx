@@ -10,25 +10,28 @@ const FormInput = ({
   onToggle,
   value,
   onChange,
+  autoComplete,
+  ...rest
 }) => {
   return (
-    <div className="border-2 border-gray-300 rounded-lg flex justify-between px-4 py-2 mb-6 items-center  hover:shadow-[0_0_4px_#22c55e] focus-within:shadow-[0_0_4px_#22c55e]  transition-shadow">
+    <div className="border-2 border-gray-300 rounded-lg flex justify-between px-3 sm:px-4 py-2 items-center hover:shadow-[0_0_4px_#22c55e] focus-within:shadow-[0_0_4px_#22c55e] transition-shadow">
       <input
+        {...rest}
         type={type}
         name={name}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        required
-        className="flex-grow outline-none placeholder-gray-400 focus:placeholder-transparent"
+        autoComplete={autoComplete}
+        className="flex-grow outline-none placeholder-gray-400 focus:placeholder-transparent text-sm sm:text-base"
       />
       {!toggleIcon && iconFa && (
-        <FontAwesomeIcon icon={iconFa} className="text-gray-500" />
+        <FontAwesomeIcon icon={iconFa} className="text-gray-500 ml-2" />
       )}
       {toggleIcon && (
         <FontAwesomeIcon
           icon={toggleIcon}
-          className="cursor-pointer text-gray-500 hover:text-green-500"
+          className="cursor-pointer text-gray-500 hover:text-green-500 ml-2"
           onClick={onToggle}
         />
       )}

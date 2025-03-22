@@ -1,7 +1,12 @@
 import React from "react";
 import Button from "../../../components/Button";
 
-const HeroSection = () => {
+const HeroSection = ({ sectionRefs }) => {
+  // Function to scroll to features section
+  const scrollToSection = (ref) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="bg-[#E8F5E9] py-20">
       <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
@@ -28,13 +33,19 @@ const HeroSection = () => {
             <Button
               className=""
               text="Get Started"
-              onClick={() => console.log("Get Started Clicked")}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(sectionRefs.cta);
+              }}
             />
             <Button
               className=""
               variant="secondary"
               text="Learn more ↓"
-              onClick={() => console.log("Learn More Clicked")}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(sectionRefs.features);
+              }}
             />
           </div>
 
@@ -46,7 +57,7 @@ const HeroSection = () => {
                   key={i}
                   src={`/assets/home/customers/customer-${i + 1}.jpg`}
                   alt="Customer"
-                  className="h-12 w-12 rounded-full border-2 border-[#F5F5F5] shadow-md"
+                  className="h-12 w-12 rounded-full border-2 border-[#F5F5F5]"
                 />
               ))}
             </div>

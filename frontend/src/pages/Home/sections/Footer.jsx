@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 py-16 border-t border-gray-200">
-      <div className="container mx-auto grid grid-cols-5 gap-8 px-32">
-        <div className="flex flex-col items-start justify-around space-y-6">
+    <footer className="bg-gray-100 py-10 sm:py-16 border-t border-gray-200">
+      <div className="container mx-auto grid grid-cols-2 lg:grid-cols-5 gap-8 px-6 sm:px-8 lg:px-12 xl:px-32">
+        <div className="flex flex-col items-center sm:items-start order-last lg:order-none justify-around space-y-6">
           <a href="#" className="mb-4">
             <img
               className="rounded-full w-16 h-16"
@@ -43,12 +43,13 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-sm text-center sm:text-left">
             Copyright &copy; <span className="year">2025</span> by NutriTrack,
             Inc. All rights reserved.
           </p>
         </div>
-        <div className="col-span-2">
+
+        <div className="sm:col-span-1 order-last lg:order-none lg:col-span-2 text-center sm:text-left">
           <p className="text-lg font-medium mb-4">Contact us</p>
           <address className="not-italic text-gray-600 text-sm space-y-2">
             <p>
@@ -69,7 +70,7 @@ const Footer = () => {
           </address>
         </div>
 
-        <div>
+        <div className="text-center sm:text-left">
           <p className="text-lg font-medium mb-4">Account</p>
           <ul className="space-y-2 text-sm text-gray-600">
             <Link to="/signup">
@@ -81,7 +82,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div>
+        <div className="text-center sm:text-left">
           <p className="text-lg font-medium mb-4">Resources</p>
           <ul className="space-y-2 text-sm text-gray-600">
             <NavList text="Food Database" onClick={() => {}} />
